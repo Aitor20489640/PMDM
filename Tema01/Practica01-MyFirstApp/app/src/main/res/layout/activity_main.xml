@@ -24,7 +24,6 @@
         android:id="@+id/button"
         android:layout_width="83dp"
         android:layout_height="38dp"
-        android:onClick="sendMessage"
         android:text="@string/button_send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
