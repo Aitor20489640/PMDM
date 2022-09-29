@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Practica02-TheGameOfPig</string>
+    <string name="lbl_P1">Player 1</string>
+    <string name="lbl_P2">Player 2</string>
+    <string name="umbral_P1">0</string>
+    <string name="umbral_P2">0</string>
+    <string name="current_P1">0</string>
+    <string name="current_P2">0</string>
+    <string name="lbl_Btn_Roll">Roll Dice</string>
+    <string name="lbl_Btn_Hold">Hold</string>
+    <string name="lbl_Current_P1">Current</string>
+    <string name="lbl_Current_P2">Current</string>
+    <string name="lbl_Dice_Result">" "</string>
+    <string name="lbl_Btn_Restart">New Game</string>
+    <string name="lbl_Result">Ha Ganado</string>
+</resources>
