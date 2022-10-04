@@ -12,5 +12,6 @@
     <string name="lbl_Current_P2">Current</string>
     <string name="lbl_Dice_Result">" "</string>
     <string name="lbl_Btn_Restart">New Game</string>
-    <string name="lbl_Result">Ha Ganado</string>
+    <string name="lbl_Result1">Ha Ganado Player 1</string>
+    <string name="lbl_Result2">Ha Ganado Player 2</string>
 </resources>
