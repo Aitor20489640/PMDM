@@ -1,11 +1,11 @@
 package com.example.ej03_calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnPlus = findViewById(R.id.btnPlus);
         Button btnResul = findViewById(R.id.btnResul);
         Button btnClear = findViewById(R.id.btnClear);
+        Button btnMinus = findViewById(R.id.btnMinus);
 
 
         btn0.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +103,14 @@ public class MainActivity extends AppCompatActivity {
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resul.setText(resul.getText() + " + ");
+                resul.setText(resul.getText() + "+");
+            }
+        });
+
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resul.setText(resul.getText() + "-");
             }
         });
 
@@ -116,41 +124,39 @@ public class MainActivity extends AppCompatActivity {
         btnResul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resul.setText(String.valueOf(calculate(resul.getText().toString())));
+                resul.setText(calculate(resul.getText().toString()));
             }
         });
 
 
     }
 
-    public int calculate(String operation) {
-        int acum = -1;
-        if (!operation.contains("+")) {
-            return Integer.parseInt(operation);
-        }
-        else {
-            if (Character.isDigit(operation.charAt(0))) {
-                acum = 0;
-                String[] cadenaNumeros = operation.split("\\+");
-                int[] numbers = new int[cadenaNumeros.length];
+    public String calculate(String operation) {
 
-                for (int i = 0; i < cadenaNumeros.length; i++) {
-                    cadenaNumeros[i] = cadenaNumeros[i].trim();
-                }
-
-                for (int i = 0; i < cadenaNumeros.length; i++) {
-                    numbers[i] = Integer.parseInt(cadenaNumeros[i]);
-                }
-                for (int num : numbers) {
-                    acum += num;
-                }
-
+        if (!operation.contains("+") && !operation.contains("-")) {
+            if (operation.isEmpty()){
+                return "0";
+            } else {
+                return operation;
             }
-            else {
-                return -1;
+        } else {
+            char sign = operation.charAt(1);
+            if (sign == '+'){
+                int indice = operation.indexOf("+");
+                String oper1 = operation.substring(0, indice);
+                String oper2 = operation.substring(indice+1);
+
+                return String.valueOf(Integer.parseInt(calculate(oper1)) + Integer.parseInt(calculate(oper2)));
+            } else {
+                int indice = operation.lastIndexOf('-');
+                String oper1 = operation.substring(0, indice);
+                String oper2 = operation.substring(indice+1);
+
+                return String.valueOf(Integer.parseInt(calculate(oper1)) - Integer.parseInt(calculate(oper2)));
             }
+
+
         }
 
-        return acum;
     }
 }
