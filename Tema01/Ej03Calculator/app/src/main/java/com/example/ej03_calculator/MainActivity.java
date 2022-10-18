@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
             if (operation.isEmpty()) {
                 return "0";
             } else {
-                System.out.println(operation);
                 return operation;
             }
         }
