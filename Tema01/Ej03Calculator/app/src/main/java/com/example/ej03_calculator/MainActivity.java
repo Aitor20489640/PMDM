@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnResul = findViewById(R.id.btnResul);
         Button btnClear = findViewById(R.id.btnClear);
         Button btnMinus = findViewById(R.id.btnMinus);
+        Button btnMult = findViewById(R.id.btnMult);
 
 
         btn0.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +115,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnMult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resul.setText(resul.getText() + "*");
+            }
+        });
+
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,40 +129,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         btnResul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resul.setText(calculate(resul.getText().toString()));
+                resul.setText(Calculator.calculate(resul.getText().toString()));
             }
         });
 
 
     }
 
-    public String calculate(String operation) {
-        int indice;
 
-        if (operation.contains("+")) {
-            indice = operation.indexOf("+");
-            String oper1 = operation.substring(0, indice);
-            String oper2 = operation.substring(indice + 1);
-
-            return String.valueOf(Integer.parseInt(calculate(oper1)) + Integer.parseInt(calculate(oper2)));
-        } else if (operation.contains("-")) {
-            indice = operation.lastIndexOf('-');
-            String oper1 = operation.substring(0, indice);
-            String oper2 = operation.substring(indice+1);
-            if (Integer.parseInt(calculate(oper1)) < Integer.parseInt(calculate(oper2))){
-                return "-" + String.valueOf(Integer.parseInt(calculate(oper2)) - Integer.parseInt(calculate(oper1)));
-            } else {
-                return String.valueOf(Integer.parseInt(calculate(oper1)) - Integer.parseInt(calculate(oper2)));
-            }
-        } else {
-            if (operation.isEmpty()) {
-                return "0";
-            } else {
-                return operation;
-            }
-        }
-    }
 }
