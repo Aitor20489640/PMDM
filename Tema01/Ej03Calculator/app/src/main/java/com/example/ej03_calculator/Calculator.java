@@ -35,7 +35,7 @@ public class Calculator {
                     return String.valueOf(Integer.parseInt(calculate(oper1)) + Integer.parseInt(calculate(oper2)));
             } else
                 if (Integer.parseInt(calculate(oper1)) < Integer.parseInt(calculate(oper2))){
-                    return "-" + String.valueOf(Integer.parseInt(calculate(oper2)) - Integer.parseInt(calculate(oper1)));
+                    return "-" + (Integer.parseInt(calculate(oper2)) - Integer.parseInt(calculate(oper1)));
                 } else {
                     return String.valueOf(Integer.parseInt(calculate(oper1)) - Integer.parseInt(calculate(oper2)));
             }
