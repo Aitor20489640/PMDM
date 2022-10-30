@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onboarding1Fragment">
+    app:startDestination="@id/onboarding0Fragment">
 
     <fragment
         android:id="@+id/onboarding1Fragment"
@@ -17,6 +17,10 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_onboarding1Fragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:exitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/onboarding2Fragment"
@@ -36,4 +40,21 @@
         android:name="com.example.practica05.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/onboarding0Fragment"
+        android:name="com.example.practica05.Onboarding0Fragment"
+        android:label="fragment_onboarding0"
+        tools:layout="@layout/fragment_onboarding0" >
+        <action
+            android:id="@+id/action_onboarding0Fragment_to_onboarding1Fragment"
+            app:destination="@id/onboarding1Fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_onboarding0Fragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
 </navigation>

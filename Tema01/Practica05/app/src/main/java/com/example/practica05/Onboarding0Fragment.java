@@ -13,16 +13,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class Onboarding1Fragment extends Fragment {
 
-    Button botonSiguiente;
+public class Onboarding0Fragment extends Fragment {
+
+    Button botonStart;
     NavController navController;
     Button botonSkip;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_onboarding1, container, false);
+        return inflater.inflate(R.layout.fragment_onboarding0, container, false);
     }
 
     @Override
@@ -31,14 +32,12 @@ public class Onboarding1Fragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        botonSiguiente = view.findViewById(R.id.botonSiguiente);
+        botonStart = view.findViewById(R.id.botonStart);
 
         botonSkip = view.findViewById(R.id.Skip);
 
-        botonSiguiente.setOnClickListener(e -> navController.navigate(R.id.action_onboarding1Fragment_to_onboarding2Fragment));
+        botonStart.setOnClickListener(e -> navController.navigate(R.id.action_onboarding0Fragment_to_onboarding1Fragment));
 
-        botonSkip.setOnClickListener(e -> navController.navigate(R.id.action_onboarding1Fragment_to_homeFragment));
+        botonSkip.setOnClickListener(e -> navController.navigate(R.id.action_onboarding0Fragment_to_homeFragment));
     }
-
-
 }
