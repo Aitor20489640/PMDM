@@ -12,21 +12,6 @@ public class Calculator {
 
             return String.valueOf(Integer.parseInt(calculate(oper1)) + Integer.parseInt(calculate(oper2)));
 
-        } else if (operation.contains("*")){
-            indice = operation.indexOf("*");
-            if (operation.contains("+")) {
-                int indice2 = operation.indexOf("+");
-                String oper1 = operation.substring(0, indice);
-                String oper2 = operation.substring(indice + 1, indice2);
-                String oper3 = operation.substring(indice2 +1);
-
-                return String.valueOf((Integer.parseInt(calculate(oper1)) * Integer.parseInt(calculate(oper2))) + Integer.parseInt(calculate(oper3)));
-            }
-            String oper1 = operation.substring(0, indice);
-            String oper2 = operation.substring(indice + 1);
-
-            return String.valueOf(Integer.parseInt(calculate(oper1)) * Integer.parseInt(calculate(oper2)));
-
         } else if (operation.contains("-")) {
             indice = operation.lastIndexOf('-');
             String oper1 = operation.substring(0, indice);
@@ -40,6 +25,12 @@ public class Calculator {
                     return String.valueOf(Integer.parseInt(calculate(oper1)) - Integer.parseInt(calculate(oper2)));
             }
 
+        } else if (operation.contains("*")){
+            indice = operation.indexOf("*");
+            String oper1 = operation.substring(0, indice);
+            String oper2 = operation.substring(indice + 1);
+
+            return String.valueOf(Integer.parseInt(calculate(oper1)) * Integer.parseInt(calculate(oper2)));
 
         } else {
             if (operation.isEmpty()) {
