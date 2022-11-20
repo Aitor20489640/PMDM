@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pokemon1Fragment"
+        android:icon="@drawable/poke_ball_svg_modified"
+        android:title="Jugador 1" />
+
+    <item
+        android:id="@+id/pokemon2Fragment"
+        android:icon="@drawable/poke_ball_svg_modified"
+        android:title="Jugador 2" />
+
+    <item
+        android:id="@+id/pokemonContinueFragment"
+        android:icon="@drawable/poke_ball_svg_modified"
+        android:title="Combatir" />
+</menu>

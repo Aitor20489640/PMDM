@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pokemon1Fragment">
+
+    <TextView
+        android:id="@+id/lblNombrePokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="@string/pokemonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblHPPokemon"
+        app:layout_constraintEnd_toStartOf="@+id/txtNombrePokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombrePokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:hint="Pikachu"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtHpPokemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblNombrePokemon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblHPPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:labelFor="@id/txtHpPokemon"
+        android:text="@string/pokemonHP"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblAtkPokemon"
+        app:layout_constraintEnd_toStartOf="@+id/txtHpPokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNombrePokemon" />
+
+    <EditText
+        android:id="@+id/txtHpPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtAtkPokemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/lblHPPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombrePokemon" />
+
+    <TextView
+        android:id="@+id/lblAtkPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonAtk"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblDefPokemon"
+        app:layout_constraintEnd_toStartOf="@+id/txtAtkPokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblHPPokemon" />
+
+    <EditText
+        android:id="@+id/txtAtkPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtDefPokemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAtkPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/txtHpPokemon" />
+
+    <TextView
+        android:id="@+id/lblDefPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonDef"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblAtkEspPokemon"
+        app:layout_constraintEnd_toStartOf="@+id/txtDefPokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAtkPokemon" />
+
+    <EditText
+        android:id="@+id/txtDefPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtAtkEspPokemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblDefPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtkPokemon" />
+
+    <TextView
+        android:id="@+id/lblAtkEspPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonAtkEsp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblDefEspPokemon"
+        app:layout_constraintEnd_toStartOf="@+id/txtAtkEspPokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDefPokemon" />
+
+    <EditText
+        android:id="@+id/txtAtkEspPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtDefEspPokemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAtkEspPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/txtDefPokemon" />
+
+    <TextView
+        android:id="@+id/lblDefEspPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonDefEsp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnValidate"
+        app:layout_constraintEnd_toStartOf="@+id/txtDefEspPokemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAtkEspPokemon" />
+
+    <EditText
+        android:id="@+id/txtDefEspPokemon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblDefEspPokemon"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtkEspPokemon" />
+
+    <Button
+        android:id="@+id/btnValidate"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/validate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDefEspPokemon" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="45dp"
+        android:enabled="false"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnValidate"
+        app:layout_constraintTop_toBottomOf="@+id/txtDefEspPokemon" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

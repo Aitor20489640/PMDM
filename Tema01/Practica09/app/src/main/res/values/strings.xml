@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Practica09</string>
+    <string name="pokemonName">Nombre Pokemon</string>
+    <string name="pokemonHP">Hp Pokemon</string>
+    <string name="pokemonAtk">Ataque Pokemon</string>
+    <string name="pokemonDef">Defensa Pokemon</string>
+    <string name="pokemonAtkEsp">Ataque Especial Pokemon</string>
+    <string name="pokemonDefEsp">Defensa Especial Pokemon</string>
+    <string name="validate">Validar</string>
+    <string name="save">Guardar</string>
+    <string name="combatir">Combatir</string>
+    <string name="atk">Ataque</string>
+    <string name="atkEsp">Ataque especial</string>
 </resources>

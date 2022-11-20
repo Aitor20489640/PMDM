@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pokemon2Fragment">
+
+    <TextView
+        android:id="@+id/lblNombrePokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="@string/pokemonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblHPPokemon2"
+        app:layout_constraintEnd_toStartOf="@+id/txtNombrePokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombrePokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:hint="Charizard"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtHpPokemon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblNombrePokemon2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblHPPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:labelFor="@id/txtHpPokemon2"
+        android:text="@string/pokemonHP"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblAtkPokemon2"
+        app:layout_constraintEnd_toStartOf="@+id/txtHpPokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNombrePokemon2" />
+
+    <EditText
+        android:id="@+id/txtHpPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtAtkPokemon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/lblHPPokemon2"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombrePokemon2" />
+
+    <TextView
+        android:id="@+id/lblAtkPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonAtk"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblDefPokemon2"
+        app:layout_constraintEnd_toStartOf="@+id/txtAtkPokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblHPPokemon2" />
+
+    <EditText
+        android:id="@+id/txtAtkPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="20"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtDefPokemon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAtkPokemon2"
+        app:layout_constraintTop_toBottomOf="@+id/txtHpPokemon2" />
+
+    <TextView
+        android:id="@+id/lblDefPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonDef"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblAtkEspPokemon2"
+        app:layout_constraintEnd_toStartOf="@+id/txtDefPokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAtkPokemon2" />
+
+    <EditText
+        android:id="@+id/txtDefPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="20"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtAtkEspPokemon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblDefPokemon2"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtkPokemon2" />
+
+    <TextView
+        android:id="@+id/lblAtkEspPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonAtkEsp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblDefEspPokemon2"
+        app:layout_constraintEnd_toStartOf="@+id/txtAtkEspPokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDefPokemon2" />
+
+    <EditText
+        android:id="@+id/txtAtkEspPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="20"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtDefEspPokemon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblAtkEspPokemon2"
+        app:layout_constraintTop_toBottomOf="@+id/txtDefPokemon2" />
+
+    <TextView
+        android:id="@+id/lblDefEspPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/pokemonDefEsp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnValidate2"
+        app:layout_constraintEnd_toStartOf="@+id/txtDefEspPokemon2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAtkEspPokemon2" />
+
+    <EditText
+        android:id="@+id/txtDefEspPokemon2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="5dp"
+        android:ems="20"
+        android:hint="0-999"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblDefEspPokemon2"
+        app:layout_constraintTop_toBottomOf="@+id/txtAtkEspPokemon2" />
+
+    <Button
+        android:id="@+id/btnValidate2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/validate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSave2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDefEspPokemon2" />
+
+    <Button
+        android:id="@+id/btnSave2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="45dp"
+        android:enabled="false"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnValidate2"
+        app:layout_constraintTop_toBottomOf="@+id/txtDefEspPokemon2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

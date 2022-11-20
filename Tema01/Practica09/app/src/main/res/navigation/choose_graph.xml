@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/choose_graph"
+    app:startDestination="@id/pokemon1Fragment">
+
+    <fragment
+        android:id="@+id/pokemon1Fragment"
+        android:name="com.example.practica09.Pokemon1Fragment"
+        android:label="fragment_pokemon1"
+        tools:layout="@layout/fragment_pokemon1" />
+    <fragment
+        android:id="@+id/pokemon2Fragment"
+        android:name="com.example.practica09.Pokemon2Fragment"
+        android:label="fragment_pokemon2"
+        tools:layout="@layout/fragment_pokemon2" />
+    <fragment
+        android:id="@+id/pokemonContinueFragment"
+        android:name="com.example.practica09.PokemonContinueFragment"
+        android:label="fragment_pokemon_continue"
+        tools:layout="@layout/fragment_pokemon_continue">
+        <action
+            android:id="@+id/action_pokemonContinueFragment_to_main_graph"
+            app:destination="@id/main_graph"
+            app:popUpTo="@id/pokemonContinueFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <include app:graph="@navigation/main_graph" />
+</navigation>

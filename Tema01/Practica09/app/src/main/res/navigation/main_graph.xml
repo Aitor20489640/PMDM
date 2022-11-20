@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/combateFragment">
+
+    <fragment
+        android:id="@+id/combateFragment"
+        android:name="com.example.practica09.CombateFragment"
+        android:label="fragment_combate"
+        tools:layout="@layout/fragment_combate" />
+</navigation>
