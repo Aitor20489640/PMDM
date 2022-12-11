@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         PokeApiService service = retrofit.create(PokeApiService.class);
-        for (int offset = 0; offset < 1261; offset += 20) {
+        for (int offset = 0; offset < 1154; offset += 20) {
             getPokemonList(service, 20, offset);
         }
 
