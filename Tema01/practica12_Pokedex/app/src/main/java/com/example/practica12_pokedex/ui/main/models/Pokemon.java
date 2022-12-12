@@ -27,34 +27,34 @@ public class Pokemon {
     }
 
     public String getWeight() {
-        return String.format("%.1f KG", weight / 10);
+        return String.format("%.1f KG", ((float) weight) / 10);
     }
 
     public String getHeight() {
-        return String.format("%.1f M", height / 10);
+        return String.format("%.1f M", ((float) height) / 10);
     }
 
     public List<TypeResponse> getTypes() {
         return types;
     }
 
-    public String getHp() {
+    public String getHpString() {
         return String.format("%d/%d", hp, Constants.maxHp);
     }
 
-    public String getAttack() {
+    public String getAttackString() {
         return String.format("%d/%d", attack, Constants.maxAttack);
     }
 
-    public String getDefense() {
+    public String getDefenseString() {
         return String.format("%d/%d", defense, Constants.maxDefense);
     }
 
-    public String getSpeed() {
+    public String getSpeedString() {
         return String.format("%d/%d", speed, Constants.maxSpeed);
     }
 
-    public String getExp() {
+    public String getExpString() {
         return String.format("%d/%d", exp, Constants.maxExp);
     }
 
@@ -62,16 +62,48 @@ public class Pokemon {
         return moves;
     }
 
-    class TypeResponse {
-        protected int slot;
-        protected Type type;
+    public int getHp() {
+        return hp;
     }
 
-    class Type{
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public class TypeResponse {
+        protected int slot;
+        protected Type type;
+
+        public Type getType() {
+            return type;
+        }
+    }
+
+    public class Type{
         protected String name;
+
+        public String getName() {
+            return name;
+        }
     }
 
     class Move{
         protected String name;
+
+        public String getName() {
+            return name;
+        }
     }
 }
