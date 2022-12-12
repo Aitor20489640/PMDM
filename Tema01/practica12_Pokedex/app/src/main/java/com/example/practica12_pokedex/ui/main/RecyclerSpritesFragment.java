@@ -17,20 +17,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.practica12_pokedex.MainViewModel;
+import com.example.practica12_pokedex.ui.main.viewmodel.MainViewModel;
 import com.example.practica12_pokedex.R;
 import com.example.practica12_pokedex.databinding.FragmentRecyclerPokemonsBinding;
 import com.example.practica12_pokedex.databinding.ViewholderPokemonBinding;
 import com.example.practica12_pokedex.ui.main.models.PokemonSprite;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerSpritesFragment extends Fragment {
     private FragmentRecyclerPokemonsBinding binding;
     private MainViewModel mainViewModel;
     private NavController navController;
-    private boolean aptoParaCargar = true;
+    //private boolean aptoParaCargar = true;
+
 
     @Nullable
     @Override
@@ -49,7 +49,7 @@ public class RecyclerSpritesFragment extends Fragment {
         binding.recyclerView.setAdapter(pokemonAdapter);
 
         mainViewModel.obtener().observe(getViewLifecycleOwner(), pokemonAdapter::establecerLista);
-        final GridLayoutManager layoutManager = (GridLayoutManager) binding.recyclerView.getLayoutManager();
+        /*final GridLayoutManager layoutManager = (GridLayoutManager) binding.recyclerView.getLayoutManager();
 
         binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -58,26 +58,25 @@ public class RecyclerSpritesFragment extends Fragment {
 
                 if (dy > 0) {
                     int visibleItemCount = layoutManager.getChildCount();
-                    //int totalItemCount = layoutManager.getItemCount();
+                    int totalItemCount = layoutManager.getItemCount();
                     int pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
 
                     if (aptoParaCargar) {
-                        if ((visibleItemCount + pastVisibleItems) >= mainViewModel.getMaxPokemon()) {
+                        if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
                             Log.i("Pokedex", " Llegamos al final.");
 
                             aptoParaCargar = false;
                             mainViewModel.getOffset().setValue(mainViewModel.getOffset().getValue() + 20);
                             mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());
-                        } else {
-                            mainViewModel.getOffset().setValue(mainViewModel.getOffset().getValue() + 20);
-                            mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());
                         }
+
+
                     }
                 }
-
-
             }
         });
+        aptoParaCargar = true;
+        mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());*/
     }
 
     class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
@@ -94,12 +93,7 @@ public class RecyclerSpritesFragment extends Fragment {
         public void onBindViewHolder(@NonNull PokemonViewHolder holder, int position) {
             PokemonSprite p = pokemonList.get(position);
 
-            holder.binding.name.setText(p.getName());
-            Glide.with(getContext())
-                    .load(p.getImageUrl())
-                    .centerCrop()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(holder.binding.image);
+            holder.binding.setPokemon(p);
 
             holder.itemView.setOnClickListener(view -> {
                 mainViewModel.seleccionar(p);
@@ -114,11 +108,7 @@ public class RecyclerSpritesFragment extends Fragment {
         }
 
         public void establecerLista(List<PokemonSprite> pokemonList) {
-            if (this.pokemonList == null) {
-                this.pokemonList = pokemonList;
-            } else {
-                this.pokemonList.addAll(pokemonList);
-            }
+            this.pokemonList = pokemonList;
             notifyDataSetChanged();
         }
     }

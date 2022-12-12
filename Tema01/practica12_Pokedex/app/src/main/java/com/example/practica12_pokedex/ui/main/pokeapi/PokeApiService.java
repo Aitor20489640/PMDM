@@ -11,8 +11,8 @@ import retrofit2.http.Query;
 public interface PokeApiService {
 
     String BASE_URL = "https://pokeapi.co/api/v2/";
-    @GET("pokemon/{id}")
-    Call<Pokemon> getPokemonById(@Path("id") String id);
+    @GET("pokemon/{name}")
+    Call<Pokemon> getPokemonById(@Path("name") String id);
 
     @GET("pokemon")
     Call<PokemonList> getPokemonList(@Query("limit") int limit,
