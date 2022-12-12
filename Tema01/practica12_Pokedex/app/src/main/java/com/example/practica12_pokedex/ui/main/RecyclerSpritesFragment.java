@@ -1,6 +1,7 @@
 package com.example.practica12_pokedex.ui.main;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +12,25 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.practica12_pokedex.MainViewModel;
+import com.example.practica12_pokedex.R;
 import com.example.practica12_pokedex.databinding.FragmentRecyclerPokemonsBinding;
 import com.example.practica12_pokedex.databinding.ViewholderPokemonBinding;
 import com.example.practica12_pokedex.ui.main.models.PokemonSprite;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerSpritesFragment extends Fragment {
     private FragmentRecyclerPokemonsBinding binding;
     private MainViewModel mainViewModel;
-    //private NavController navController;
+    private NavController navController;
+    private boolean aptoParaCargar = true;
 
     @Nullable
     @Override
@@ -36,16 +43,46 @@ public class RecyclerSpritesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
-        //navController = Navigation.findNavController(view);
+        navController = Navigation.findNavController(view);
 
         PokemonAdapter pokemonAdapter = new PokemonAdapter();
         binding.recyclerView.setAdapter(pokemonAdapter);
 
         mainViewModel.obtener().observe(getViewLifecycleOwner(), pokemonAdapter::establecerLista);
+        final GridLayoutManager layoutManager = (GridLayoutManager) binding.recyclerView.getLayoutManager();
+
+        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if (dy > 0) {
+                    int visibleItemCount = layoutManager.getChildCount();
+                    //int totalItemCount = layoutManager.getItemCount();
+                    int pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
+
+                    if (aptoParaCargar) {
+                        if ((visibleItemCount + pastVisibleItems) >= mainViewModel.getMaxPokemon()) {
+                            Log.i("Pokedex", " Llegamos al final.");
+
+                            aptoParaCargar = false;
+                            mainViewModel.getOffset().setValue(mainViewModel.getOffset().getValue() + 20);
+                            mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());
+                        } else {
+                            mainViewModel.getOffset().setValue(mainViewModel.getOffset().getValue() + 20);
+                            mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());
+                        }
+                    }
+                }
+
+
+            }
+        });
     }
 
     class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
         List<PokemonSprite> pokemonList;
+
 
         @NonNull
         @Override
@@ -55,7 +92,20 @@ public class RecyclerSpritesFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull PokemonViewHolder holder, int position) {
-            holder.bindPokemon(pokemonList.get(position));
+            PokemonSprite p = pokemonList.get(position);
+
+            holder.binding.name.setText(p.getName());
+            Glide.with(getContext())
+                    .load(p.getImageUrl())
+                    .centerCrop()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.binding.image);
+
+            holder.itemView.setOnClickListener(view -> {
+                mainViewModel.seleccionar(p);
+                navController.navigate(R.id.action_recyclerSpritesFragment_to_pokemonDetailsFragment);
+
+            });
         }
 
         @Override
@@ -64,7 +114,11 @@ public class RecyclerSpritesFragment extends Fragment {
         }
 
         public void establecerLista(List<PokemonSprite> pokemonList) {
-            this.pokemonList = pokemonList;
+            if (this.pokemonList == null) {
+                this.pokemonList = pokemonList;
+            } else {
+                this.pokemonList.addAll(pokemonList);
+            }
             notifyDataSetChanged();
         }
     }
@@ -75,11 +129,6 @@ public class RecyclerSpritesFragment extends Fragment {
         public PokemonViewHolder(ViewholderPokemonBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-        }
-
-        public void bindPokemon(PokemonSprite pokemonSprite) {
-            binding.setPokemon(pokemonSprite);
-            binding.executePendingBindings();
         }
     }
 }

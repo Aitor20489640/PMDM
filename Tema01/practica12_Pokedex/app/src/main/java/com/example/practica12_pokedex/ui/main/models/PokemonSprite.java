@@ -15,8 +15,8 @@ public class PokemonSprite {
         return name;
     }
 
-    public int getId() {
+    public String getId() {
         String[] urlSplit = url.substring(7, url.length() - 1).split("/");
-        return Integer.parseInt(urlSplit[urlSplit.length - 1]);
+        return urlSplit[urlSplit.length - 1];
     }
 }

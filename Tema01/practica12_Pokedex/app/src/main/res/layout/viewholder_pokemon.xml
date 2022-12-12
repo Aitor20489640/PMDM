@@ -3,14 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="pokemon"
-            type="com.example.practica12_pokedex.ui.main.models.PokemonSprite" />
-
-    </data>
-
     <com.skydoves.transformationlayout.TransformationLayout
         android:id="@+id/transformationLayout"
         android:layout_width="match_parent"
@@ -35,7 +27,7 @@
                 tools:background="@color/background800"
                 tools:ignore="UnusedAttribute">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <ImageView
                     android:id="@+id/image"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -43,11 +35,9 @@
                     android:scaleType="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:paletteCard="@{cardView}"
-                    app:paletteImage="@{pokemon.imageUrl}" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -55,8 +45,8 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:padding="12dp"
-                    android:text="@{pokemon.name}"
-                    android:textColor="@color/white"
+                    android:text=""
+                    android:textColor="@color/cardview_dark_background"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
