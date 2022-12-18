@@ -1,4 +1,4 @@
-package com.example.practica12_pokedex.ui.main.models;
+package com.example.practica12_pokedex.main.ui.models;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,6 @@
-package com.example.practica12_pokedex.ui.main;
+package com.example.practica12_pokedex.main.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.practica12_pokedex.ui.main.viewmodel.MainViewModel;
+import com.example.practica12_pokedex.main.ui.viewmodel.MainViewModel;
 import com.example.practica12_pokedex.R;
 import com.example.practica12_pokedex.databinding.FragmentRecyclerPokemonsBinding;
 import com.example.practica12_pokedex.databinding.ViewholderPokemonBinding;
-import com.example.practica12_pokedex.ui.main.models.PokemonSprite;
+import com.example.practica12_pokedex.main.ui.models.PokemonSprite;
 
 import java.util.List;
 
@@ -29,7 +25,6 @@ public class RecyclerSpritesFragment extends Fragment {
     private FragmentRecyclerPokemonsBinding binding;
     private MainViewModel mainViewModel;
     private NavController navController;
-    //private boolean aptoParaCargar = true;
 
 
     @Nullable
@@ -49,34 +44,6 @@ public class RecyclerSpritesFragment extends Fragment {
         binding.recyclerView.setAdapter(pokemonAdapter);
 
         mainViewModel.obtener().observe(getViewLifecycleOwner(), pokemonAdapter::establecerLista);
-        /*final GridLayoutManager layoutManager = (GridLayoutManager) binding.recyclerView.getLayoutManager();
-
-        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                if (dy > 0) {
-                    int visibleItemCount = layoutManager.getChildCount();
-                    int totalItemCount = layoutManager.getItemCount();
-                    int pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
-
-                    if (aptoParaCargar) {
-                        if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-                            Log.i("Pokedex", " Llegamos al final.");
-
-                            aptoParaCargar = false;
-                            mainViewModel.getOffset().setValue(mainViewModel.getOffset().getValue() + 20);
-                            mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());
-                        }
-
-
-                    }
-                }
-            }
-        });
-        aptoParaCargar = true;
-        mainViewModel.actualizarDatos(mainViewModel.getOffset().getValue());*/
     }
 
     class PokemonAdapter extends RecyclerView.Adapter<PokemonViewHolder> {

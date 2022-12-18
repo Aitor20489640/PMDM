@@ -8,4 +8,12 @@
     <string name="def">DEF</string>
     <string name="spd">SPD</string>
     <string name="exp">EXP</string>
+    <string name="items">Items</string>
+    <string name="movementLbl">Movement</string>
+    <string name="accuracyLbl">Accuracy</string>
+    <string name="pokemonList">Pokemon</string>
+    <string name="nombreItemLbl">Nombre</string>
+    <string name="categoriaItemLbl">Categoría</string>
+    <string name="costeItemLbl">Coste</string>
+    <string name="EfectosItemLbl">Efectos</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.practica12_pokedex.ui.main.viewmodel;
+package com.example.practica12_pokedex.main.ui.viewmodel;
 
 import android.app.Application;
 
@@ -6,9 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.practica12_pokedex.ui.main.models.Pokemon;
-import com.example.practica12_pokedex.ui.main.models.PokemonSprite;
-import com.example.practica12_pokedex.ui.main.pokeapi.PokeApiClient;
+import com.example.practica12_pokedex.main.ui.models.Pokemon;
+import com.example.practica12_pokedex.main.ui.models.PokemonSprite;
+import com.example.practica12_pokedex.main.ui.pokeapi.PokeApiClient;
 
 import java.util.List;
 
@@ -28,14 +28,6 @@ public class MainViewModel extends AndroidViewModel {
     public void seleccionar(PokemonSprite sprite) {
         PokeApiClient.getPokemonInfo(sprite.getName(), pokemonSeleccionado);
         spriteSeleccionado.setValue(sprite);
-    }
-
-    public MutableLiveData<Integer> getOffset() {
-        return offset;
-    }
-
-    public void actualizarDatos(int outOffset) {
-        PokeApiClient.getPokemonList(outOffset, listSpritesMutableLiveData);
     }
 
     public MutableLiveData<Pokemon> getPokemonSeleccionado() {

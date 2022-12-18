@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
-            name="pokemon"
-            type="com.example.practica12_pokedex.main.ui.models.PokemonSprite" />
+            name="item"
+            type="com.example.practica12_pokedex.main.items.models.ItemListDetails" />
     </data>
 
     <com.skydoves.transformationlayout.TransformationLayout
@@ -42,7 +41,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:paletteImage="@{pokemon.imageUrl}" />
+                    app:paletteImage="@{item.url}" />
 
                 <TextView
                     android:id="@+id/name"
@@ -52,7 +51,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:padding="12dp"
-                    android:text="@{pokemon.name}"
+                    android:text="@{item.name}"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="16sp"
                     android:textStyle="bold"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/recyclerSpritesFragment"
+        android:icon="@android:drawable/btn_default"
+        android:title="@string/app_name" />
+
+    <item
+        android:id="@+id/itemListRecyclerFragment"
+        android:icon="@android:drawable/btn_default"
+        android:title="@string/items" />
+
+</menu>

@@ -1,4 +1,4 @@
-package com.example.practica12_pokedex.ui.main.utils;
+package com.example.practica12_pokedex.main.ui.utils;
 
 import com.example.practica12_pokedex.R;
 

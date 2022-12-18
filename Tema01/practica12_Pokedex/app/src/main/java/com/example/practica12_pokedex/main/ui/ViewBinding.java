@@ -1,4 +1,4 @@
-package com.example.practica12_pokedex.ui.main;
+package com.example.practica12_pokedex.main.ui;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -8,8 +8,8 @@ import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.practica12_pokedex.ui.main.utils.TypeUtil;
-import com.example.practica12_pokedex.ui.main.models.Pokemon;
+import com.example.practica12_pokedex.main.ui.utils.TypeUtil;
+import com.example.practica12_pokedex.main.ui.models.Pokemon;
 import com.skydoves.androidribbon.RibbonRecyclerView;
 import com.skydoves.androidribbon.RibbonView;
 import com.skydoves.progressview.ProgressView;

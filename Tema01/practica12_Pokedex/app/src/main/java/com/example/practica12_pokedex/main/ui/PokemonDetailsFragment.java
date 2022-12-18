@@ -1,4 +1,4 @@
-package com.example.practica12_pokedex.ui.main;
+package com.example.practica12_pokedex.main.ui;
 
 import android.os.Bundle;
 
@@ -11,10 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.practica12_pokedex.ui.main.viewmodel.MainViewModel;
+import com.example.practica12_pokedex.main.ui.viewmodel.MainViewModel;
 import com.example.practica12_pokedex.databinding.FragmentPokemonDetailsBinding;
-import com.example.practica12_pokedex.ui.main.models.Pokemon;
-import com.example.practica12_pokedex.ui.main.models.PokemonSprite;
+import com.example.practica12_pokedex.main.ui.models.Pokemon;
+import com.example.practica12_pokedex.main.ui.models.PokemonSprite;
 
 public class PokemonDetailsFragment extends Fragment {
     private FragmentPokemonDetailsBinding binding;
